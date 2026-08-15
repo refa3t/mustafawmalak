@@ -34,28 +34,30 @@
   }
 
   // ═══════════════ COLOR PALETTES ═══════════════
+  // Gold through champagne to ivory — the same accent ramp the CSS uses,
+  // so the drifting atmosphere reads as light on the night sky.
   const FLOWER_COLORS = [
-    { petal: "#C26070", center: "#9B3A4F" },
-    { petal: "#E8A8B4", center: "#C26070" },
-    { petal: "#F5D8DE", center: "#E8A8B4" },
-    { petal: "#064e3b", center: "#003527" },
-    { petal: "#0b513d", center: "#064e3b" },
-    { petal: "#C8A040", center: "#735c00" },
+    { petal: "#C8A040", center: "#8a6d20" },
     { petal: "#E0C060", center: "#C8A040" },
+    { petal: "#F0DCA8", center: "#E0C060" },
+    { petal: "#D8B878", center: "#A88530" },
+    { petal: "#FBF3DF", center: "#E0C060" },
+    { petal: "#B8912F", center: "#735c00" },
+    { petal: "#EBD9A0", center: "#C8A040" },
   ];
 
-  const LEAF_COLORS = ["#064e3b", "#0b513d", "#003527"];
+  const LEAF_COLORS = ["#8a6d20", "#A88530", "#735c00"];
 
   const BUTTERFLY_COLORS = [
-    ["#C26070", "#E8A8B4", "#9B3A4F"],
-    ["#064e3b", "#80bea6", "#003527"],
-    ["#C8A040", "#E0C060", "#735c00"],
-    ["#F5D8DE", "#E8A8B4", "#C26070"],
-    ["#7A5060", "#C26070", "#9B3A4F"],
-    ["#E0C060", "#F5D8DE", "#C8A040"],
+    ["#C8A040", "#E0C060", "#8a6d20"],
+    ["#E0C060", "#F0DCA8", "#C8A040"],
+    ["#D8B878", "#EBD9A0", "#A88530"],
+    ["#FBF3DF", "#E0C060", "#C8A040"],
+    ["#B8912F", "#D8B878", "#735c00"],
+    ["#F0DCA8", "#FBF3DF", "#E0C060"],
   ];
 
-  const FIREWORK_COLORS = ["#C8A040", "#E0C060", "#C26070", "#E8A8B4", "#F5D8DE", "#064e3b", "#80bea6", "#ffffff"];
+  const FIREWORK_COLORS = ["#C8A040", "#E0C060", "#F0DCA8", "#D8B878", "#FBF3DF", "#EBD9A0", "#B8912F", "#ffffff"];
 
   // ═══════════════ LANGUAGE SWITCHER ═══════════════
   let currentLang = "ar";
@@ -507,7 +509,7 @@
   // ═══════════════ ATMOSPHERE PETALS ═══════════════
   (() => {
     if (!atmosphere) return;
-    const pColors = ["#064e3b18", "#0b513d12", "#C8A0400c", "#E8A8B40a", "#C260700c"];
+    const pColors = ["#C8A04018", "#E0C06012", "#F0DCA80c", "#FBF3DF0a", "#D8B8780c"];
 
     function createPetal() {
       const petal = document.createElement("div");
@@ -753,7 +755,7 @@
 
       // Click ripple ring
       const ring = document.createElement("div");
-      ring.style.cssText = `position:fixed;pointer-events:none;z-index:54;border:2px solid rgba(0,53,39,0.2);border-radius:50%;left:${cx}px;top:${cy}px;transform:translate(-50%,-50%) scale(0);`;
+      ring.style.cssText = `position:fixed;pointer-events:none;z-index:54;border:2px solid rgba(200,160,64,0.25);border-radius:50%;left:${cx}px;top:${cy}px;transform:translate(-50%,-50%) scale(0);`;
       atmosphere.appendChild(ring);
       ring.animate(
         [
