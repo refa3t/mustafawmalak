@@ -292,7 +292,8 @@ html[lang="ar"][dir="rtl"] .english-text { display: none; }
   height: auto;
   transform: scale(0.8);
   transform-origin: bottom right;
-  mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 18%);
 }
 
 /* ═══════════════ BACKGROUND ACCENTS ═══════════════ */
@@ -336,16 +337,32 @@ html[lang="ar"][dir="rtl"] .english-text { display: none; }
   scrollbar-width: none;
   -ms-overflow-style: none;
 
-  /* The couple photo sits under the night gradient as a watermark */
   background-color: var(--navy-900);
-  background-image:
-    image-set(url('assets/back.webp') type('image/webp'), url('assets/back.png') type('image/png')),
-    var(--night);
-  background-size: 135% 85%, cover;
-  background-position: bottom center, center;
-  background-repeat: no-repeat, no-repeat;
-  background-blend-mode: multiply, normal;
-  background-attachment: fixed, fixed;
+  background-image: var(--night);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* The couple close the invitation in their own colours, edge to edge, with
+   the top of the frame dissolving into the night rather than being tinted. */
+.closing-photo {
+  /* Same gutters as the details card and countdown row, so the gold frame
+     stays unbroken and every block in the card shares one edge. */
+  width: 100%;
+  margin-top: 4px;
+  line-height: 0;
+}
+
+.closing-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-end-start-radius: var(--radius-card);
+  border-end-end-radius: var(--radius-card);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 20%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 20%);
 }
 
 .invitation-card.show {
