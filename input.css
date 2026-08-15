@@ -232,7 +232,7 @@ html:not(.js) .scene { display: none; }
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   pointer-events: none;
   filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.5));
 }
@@ -251,19 +251,13 @@ html:not(.js) .scene { display: none; }
   bottom: 0; left: 50%;
   width: clamp(62px, 19vw, 78px);
   height: clamp(62px, 19vw, 78px);
+  object-fit: contain;
   transform: translate(-50%, 50%);
   z-index: 20;
   pointer-events: none;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
 }
 
-.seal-letters {
-  font-family: var(--font-script);
-  font-size: 40px;
-  fill: #2b2007;
-  fill-opacity: 0.72;
-  letter-spacing: -2px;
-}
 
 /* Hover lift is a desktop nicety only */
 @media (hover: hover) and (pointer: fine) {
@@ -432,7 +426,7 @@ html[lang="ar"] .open-hint { font-family: var(--font-display); font-size: clamp(
 
 /* Shared icon treatment — drawn locally so a missing icon font can never
    leave ligature names showing as text. */
-.ico, .card-ico, .btn-ico, .nav-ico, .ornament-ico, .names-heart {
+.ico, .card-ico, .btn-ico, .ornament-ico, .names-heart {
   fill: none;
   stroke: currentColor;
   stroke-width: 1.6;
@@ -776,57 +770,6 @@ html[lang="ar"] .ghost-btn { font-family: var(--font-body); font-size: 14px; let
   font-size: clamp(1.5rem, 7vw, 2.25rem);
   color: var(--primary);
 }
-
-/* ── Mobile bottom nav ── */
-.bottom-nav { display: none; }
-
-@media (max-width: 767px) {
-  .js .bottom-nav:not([hidden]) {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 60;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 12px calc(env(safe-area-inset-bottom, 0px) + 14px);
-    background: rgba(20, 20, 0, 0.82);
-    -webkit-backdrop-filter: blur(24px);
-    backdrop-filter: blur(24px);
-    border-top: 1px solid var(--hairline);
-    border-start-start-radius: 24px;
-    border-start-end-radius: 24px;
-    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.45);
-  }
-  /* keep the closing clear of the bar */
-  .panel { padding-bottom: calc(var(--section-gap) + 74px); }
-}
-
-.nav-item {
-  flex: 1;
-  min-height: 46px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  text-decoration: none;
-  color: var(--on-surface-variant);
-  opacity: 0.7;
-  transition: color 0.3s, opacity 0.3s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.nav-item span {
-  font-family: var(--font-label);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-}
-html[lang="ar"] .nav-item span { font-family: var(--font-body); font-size: 11px; letter-spacing: 0; }
-.nav-ico { width: 21px; height: 21px; }
-.nav-item.is-current { color: var(--primary); opacity: 1; transform: scale(1.08); }
-.nav-item:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 8px; }
-
 
 /* ═══════════════ REVEALS ═══════════════
    Visible by default; only scripting may hide them, and only until

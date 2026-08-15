@@ -33,9 +33,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/new/2bottom.webp" type="image/webp" fetchpriority="high">
 <link rel="preload" as="image" href="assets/new/1top.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/kh.webp" type="image/webp" fetchpriority="high">
 <link rel="preload" as="image" href="assets/back.webp" type="image/webp">
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 
 <script>document.documentElement.className += " js";</script>
 </head>
@@ -80,25 +81,10 @@
             <img src="assets/new/1top.png" alt="" class="envelope-sheet" width="454" height="500" fetchpriority="high">
           </picture>
 
-          <!-- Wax seal, drawn locally so it stays crisp and costs nothing -->
-          <svg class="envelope-seal" viewBox="0 0 100 100" aria-hidden="true">
-            <defs>
-              <radialGradient id="waxFace" cx="38%" cy="32%" r="72%">
-                <stop offset="0%" stop-color="#f0d894"/>
-                <stop offset="45%" stop-color="#c8a040"/>
-                <stop offset="100%" stop-color="#7d6018"/>
-              </radialGradient>
-              <linearGradient id="waxRim" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#f7e7b8"/>
-                <stop offset="100%" stop-color="#8a6a1c"/>
-              </linearGradient>
-            </defs>
-            <path fill="url(#waxRim)" d="M50 3c9 0 13 6 21 8s14-2 19 6-1 15 2 23 8 12 4 20-13 7-19 13-7 14-16 15-13-6-22-6-13 7-21 4-8-11-13-17-13-8-14-17 6-13 6-22-6-14-1-21 12-3 19-6S41 3 50 3Z"/>
-            <circle cx="50" cy="50" r="38" fill="url(#waxFace)"/>
-            <circle cx="50" cy="50" r="33" fill="none" stroke="#6d5314" stroke-opacity=".45" stroke-width="1.4"/>
-            <circle cx="50" cy="50" r="30.5" fill="none" stroke="#f3e2ac" stroke-opacity=".35" stroke-width=".9"/>
-            <text class="seal-letters" x="50" y="62" text-anchor="middle">MM</text>
-          </svg>
+          <picture>
+            <source srcset="assets/kh.webp" type="image/webp">
+            <img src="assets/kh.png" alt="" class="envelope-seal" width="320" height="320" fetchpriority="high">
+          </picture>
         </div>
 
         <div id="envelope-shadow" class="envelope-shadow"></div>
@@ -237,26 +223,6 @@
   </section>
 </main>
 
-<!-- Mobile bottom nav -->
-<nav id="bottom-nav" class="bottom-nav" hidden>
-  <a class="nav-item is-current" href="#sec-home"    data-target="sec-home">
-    <svg viewBox="0 0 24 24" class="nav-ico"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1Z"/></svg>
-    <span data-ar="الدعوة" data-en="HOME">الدعوة</span>
-  </a>
-  <a class="nav-item" href="#sec-count" data-target="sec-count">
-    <svg viewBox="0 0 24 24" class="nav-ico"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg>
-    <span data-ar="الموعد" data-en="TIMER">الموعد</span>
-  </a>
-  <a class="nav-item" href="#sec-details" data-target="sec-details">
-    <svg viewBox="0 0 24 24" class="nav-ico"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-    <span data-ar="التفاصيل" data-en="DETAILS">التفاصيل</span>
-  </a>
-  <a class="nav-item" href="#sec-venue" data-target="sec-venue">
-    <svg viewBox="0 0 24 24" class="nav-ico"><path d="M20 10c0 5.5-8 11-8 11S4 15.5 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg>
-    <span data-ar="المكان" data-en="VENUE">المكان</span>
-  </a>
-</nav>
-
-<script src="script.js?v=4" defer></script>
+<script src="script.js?v=5" defer></script>
 </body>
 </html>

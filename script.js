@@ -192,47 +192,6 @@
     }
   }
 
-  /* ═══════════════ BOTTOM NAV ═══════════════
-     Revealed only once the invitation is open, and it scrolls the card's
-     own container rather than the document. */
-  const bottomNav = $("#bottom-nav");
-
-  function initBottomNav() {
-    if (!bottomNav) return;
-    bottomNav.hidden = false;
-
-    const items = $$(".nav-item", bottomNav);
-
-    items.forEach((item) => {
-      item.addEventListener("click", (e) => {
-        const target = document.getElementById(item.dataset.target);
-        if (!target) return;
-        e.preventDefault();
-        const top = target.getBoundingClientRect().top - card.getBoundingClientRect().top + card.scrollTop;
-        card.scrollTo({ top: Math.max(0, top - 8), behavior: reduced ? "auto" : "smooth" });
-      });
-    });
-
-    if (!("IntersectionObserver" in window)) return;
-
-    // Light up whichever section owns the middle of the screen.
-    const sections = items
-      .map((i) => document.getElementById(i.dataset.target))
-      .filter(Boolean);
-
-    const spy = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          items.forEach((i) => i.classList.toggle("is-current", i.dataset.target === entry.target.id));
-        });
-      },
-      { root: card, rootMargin: "-45% 0px -45% 0px", threshold: 0 }
-    );
-
-    sections.forEach((s) => spy.observe(s));
-  }
-
   /* ═══════════════ OPENING THE ENVELOPE ═══════════════ */
   let opened = false;
 
@@ -240,7 +199,6 @@
     card.classList.add("show");
     initReveals();
     startCountdown();
-    initBottomNav();
     store.set("sessionStorage", "mm-opened", "1");
   }
 
@@ -297,7 +255,6 @@
     card.classList.add("show");
     initReveals();
     startCountdown();
-    initBottomNav();
     return true;
   }
 
