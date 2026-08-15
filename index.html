@@ -1,205 +1,262 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="ar" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>حفل الزفاف — مصطفى & ملك</title>
-  <meta name="theme-color" content="#0f1830">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="assets/back.webp" type="image/webp" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Amiri:wght@400;700&family=Great+Vibes&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>مصطفى × ملك — حفل الزفاف</title>
+<meta name="description" content="يسرنا دعوتكم لمشاركتنا فرحة زفافنا — الأحد ٦ سبتمبر ٢٠٢٦، الساعة ٨:٣٠ مساءً، قاعة الماسة، بنها — كفر الجزار.">
+<meta name="theme-color" content="#141400">
+
+<!-- Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:site_name" content="مصطفى × ملك">
+<meta property="og:title" content="مصطفى × ملك — حفل الزفاف">
+<meta property="og:description" content="الأحد ٦ سبتمبر ٢٠٢٦ — ٨:٣٠ مساءً — قاعة الماسة، بنها. بحضوركم تكتمل فرحتنا.">
+<meta property="og:image" content="https://refa3t.github.io/mustafawmalak/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="مصطفى وملك — حفل الزفاف">
+<meta property="og:url" content="https://refa3t.github.io/mustafawmalak/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="مصطفى × ملك — حفل الزفاف">
+<meta name="twitter:description" content="الأحد ٦ سبتمبر ٢٠٢٦ — ٨:٣٠ مساءً — قاعة الماسة، بنها.">
+<meta name="twitter:image" content="https://refa3t.github.io/mustafawmalak/assets/og.jpg">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<!-- Fonts and the first-paint imagery are fetched together, so the opening
+     screen never sits on an empty navy background. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/new/2bottom.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/new/1top.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/back.webp" type="image/webp">
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4">
+
+<script>document.documentElement.className += " js";</script>
 </head>
-<body class="min-h-screen overflow-x-hidden relative">
 
-  <!-- Background Audio -->
-  <audio id="bg-audio" loop preload="none">
-    <source src="assets/au.mpeg" type="audio/mpeg">
-  </audio>
+<body>
 
-  <!-- Language Switcher -->
-  <div id="lang-switch" class="lang-switch">
-    <button id="btn-ar" class="lang-btn active" onclick="switchLang('ar')">AR</button>
-    <button id="btn-en" class="lang-btn" onclick="switchLang('en')">EN</button>
-  </div>
+<!-- ═══════════════ LOADER ═══════════════ -->
+<div id="loader" class="loader" role="status" aria-live="polite">
+  <p class="loader-mono" aria-hidden="true">M<span>&amp;</span>M</p>
+  <span class="loader-label" data-ar="جارٍ فتح الدعوة" data-en="Opening the invitation">جارٍ فتح الدعوة</span>
+  <span class="loader-bar" aria-hidden="true"></span>
+</div>
 
-  <!-- ═══════════════ SCENE 1: ENVELOPE ═══════════════ -->
-  <section id="scene" class="scene">
-    <header class="envelope-header">
-      <h1 class="logo-entrance header-float">M <span>&amp;</span> <span>M</span></h1>
-    </header>
+<!-- ═══════════════ LANGUAGE ═══════════════ -->
+<div id="lang-switch" class="lang-switch">
+  <button id="btn-ar" class="lang-btn is-active" type="button" lang="ar">AR</button>
+  <button id="btn-en" class="lang-btn" type="button" lang="en">EN</button>
+</div>
 
-    <div id="envelope-trigger" class="envelope-container envelope-entrance">
+<!-- ═══════════════ SCENE 1 — ENVELOPE ═══════════════ -->
+<section id="scene" class="scene">
+
+  <header class="envelope-header">
+    <p class="header-mono logo-entrance header-float" aria-hidden="true">M <span>&amp;</span> M</p>
+  </header>
+
+  <div class="envelope-stage">
+    <div id="envelope-trigger" class="envelope-container envelope-entrance"
+         role="button" tabindex="0"
+         aria-label="اضغط على الختم لفتح الدعوة"
+         data-label-ar="اضغط على الختم لفتح الدعوة"
+         data-label-en="Press the seal to open the invitation">
       <div class="envelope-body">
-        <img src="assets/new/2bottom.png" class="envelope-navy absolute inset-0 w-full h-full object-cover pointer-events-none">
+        <picture>
+          <source srcset="assets/new/2bottom.webp" type="image/webp">
+          <img src="assets/new/2bottom.png" alt="" class="envelope-sheet" width="444" height="322" fetchpriority="high">
+        </picture>
 
         <div id="envelope-top-wrapper" class="envelope-flap">
-          <img id="envelope-top" src="assets/new/1top.png" class="envelope-navy absolute inset-0 w-full h-full object-cover pointer-events-none">
-          <img src="assets/kh.png" class="envelope-seal">
+          <picture>
+            <source srcset="assets/new/1top.webp" type="image/webp">
+            <img src="assets/new/1top.png" alt="" class="envelope-sheet" width="454" height="500" fetchpriority="high">
+          </picture>
+
+          <!-- Wax seal, drawn locally so it stays crisp and costs nothing -->
+          <svg class="envelope-seal" viewBox="0 0 100 100" aria-hidden="true">
+            <defs>
+              <radialGradient id="waxFace" cx="38%" cy="32%" r="72%">
+                <stop offset="0%" stop-color="#f0d894"/>
+                <stop offset="45%" stop-color="#c8a040"/>
+                <stop offset="100%" stop-color="#7d6018"/>
+              </radialGradient>
+              <linearGradient id="waxRim" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f7e7b8"/>
+                <stop offset="100%" stop-color="#8a6a1c"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#waxRim)" d="M50 3c9 0 13 6 21 8s14-2 19 6-1 15 2 23 8 12 4 20-13 7-19 13-7 14-16 15-13-6-22-6-13 7-21 4-8-11-13-17-13-8-14-17 6-13 6-22-6-14-1-21 12-3 19-6S41 3 50 3Z"/>
+            <circle cx="50" cy="50" r="38" fill="url(#waxFace)"/>
+            <circle cx="50" cy="50" r="33" fill="none" stroke="#6d5314" stroke-opacity=".45" stroke-width="1.4"/>
+            <circle cx="50" cy="50" r="30.5" fill="none" stroke="#f3e2ac" stroke-opacity=".35" stroke-width=".9"/>
+            <text class="seal-letters" x="50" y="62" text-anchor="middle">MM</text>
+          </svg>
         </div>
 
         <div id="envelope-shadow" class="envelope-shadow"></div>
 
-        <p class="envelope-text text-reveal" data-ar="you are invited" data-en="you are invited">
-          you are invited
-        </p>
+        <p class="envelope-text">you are invited</p>
 
         <div id="couple-card" class="couple-card">
           <p class="couple-name" data-ar="مصطفى" data-en="Mostafa">مصطفى</p>
-          <p class="couple-amp">&amp;</p>
+          <p class="couple-amp" aria-hidden="true">&times;</p>
           <p class="couple-name" data-ar="ملك" data-en="Malak">ملك</p>
           <p class="couple-date">SAVE THE DATE</p>
         </div>
       </div>
     </div>
 
-    <footer class="illustration-footer">
+    <p id="open-hint" class="open-hint" data-ar="اضغط على الختم لفتح الدعوة" data-en="Press the seal to open the invitation">
+      اضغط على الختم لفتح الدعوة
+    </p>
+  </div>
+
+  <footer class="illustration-footer">
+    <picture>
+      <source srcset="assets/back.webp" type="image/webp">
+      <img alt="مصطفى وملك" class="illustration-img" src="assets/back.png" width="1100" height="1169" decoding="async">
+    </picture>
+  </footer>
+</section>
+
+<div id="atmosphere" class="atmosphere" aria-hidden="true"></div>
+
+<!-- ═══════════════ SCENE 2 — THE INVITATION ═══════════════ -->
+<main id="invitation-card" class="invitation-card card-hidden">
+
+  <!-- Desktop top bar -->
+  <header class="topbar">
+    <span class="topbar-side" aria-hidden="true">
+      <svg viewBox="0 0 24 24" class="ico"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </span>
+    <p class="topbar-mono">M &amp; M</p>
+    <span class="topbar-side" aria-hidden="true">
+      <svg viewBox="0 0 24 24" class="ico ico-fill"><path d="M12 20.5s-7.5-4.7-7.5-9.7A4.3 4.3 0 0 1 12 8a4.3 4.3 0 0 1 7.5 2.8c0 5-7.5 9.7-7.5 9.7Z"/></svg>
+    </span>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section id="sec-home" class="hero">
+    <div class="hero-bg" aria-hidden="true">
       <picture>
         <source srcset="assets/back.webp" type="image/webp">
-        <img alt="مصطفى وملك" class="illustration-img" src="assets/back.png"
-             width="1100" height="1169" decoding="async" fetchpriority="high">
+        <img src="assets/back.png" alt="" width="1100" height="1169" decoding="async">
       </picture>
-    </footer>
-
-    <div class="bg-accent bg-accent-top-right">
-      <svg class="w-full h-full text-primary fill-current" viewBox="0 0 100 100"><circle cx="100" cy="0" r="80"></circle></svg>
+      <span class="hero-scrim"></span>
     </div>
-    <div class="bg-accent bg-accent-bottom-left">
-      <svg class="w-full h-full text-primary fill-current" viewBox="0 0 100 100"><circle cx="0" cy="100" r="80"></circle></svg>
+
+    <div class="hero-inner reveal">
+      <p class="eyebrow">you are invited</p>
+      <h1 class="hero-name" data-ar="مصطفى" data-en="Mostafa">مصطفى</h1>
+      <span class="hero-amp" aria-hidden="true">&amp;</span>
+      <h1 class="hero-name" data-ar="ملك" data-en="Malak">ملك</h1>
+
+      <div class="ornament" aria-hidden="true">
+        <svg viewBox="0 0 24 24" class="ornament-ico ico-fill"><path d="M12 20.5s-7.5-4.7-7.5-9.7A4.3 4.3 0 0 1 12 8a4.3 4.3 0 0 1 7.5 2.8c0 5-7.5 9.7-7.5 9.7Z"/></svg>
+      </div>
+
+      <p class="eyebrow eyebrow-wide">SAVE THE DATE</p>
     </div>
   </section>
 
-  <!-- Floating Petals -->
-  <div id="atmosphere" class="atmosphere"></div>
+  <!-- ── Invitation details ── -->
+  <section id="sec-details" class="panel">
 
-  <!-- ═══════════════ SCENE 2: INVITATION CARD ═══════════════ -->
-  <div id="invitation-card" class="invitation-card card-hidden">
-    <main class="invitation-main">
+    <div class="reveal">
+      <p class="bismillah">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
 
-      <div class="invitation-border"></div>
-
-      <div class="invitation-content">
-
-        <!-- Bismillah -->
-        <div class="reveal" data-delay="0">
-          <p class="bismillah" data-ar="بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ" data-en="بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ">
-            بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-          </p>
-        </div>
-
-        <!-- Divider -->
-        <div class="reveal divider-gold" data-delay="50"></div>
-
-        <!-- Names -->
-        <div class="reveal text-center" data-delay="100">
-          <h2 class="couple-name-lg" data-ar="مصطفى" data-en="Mostafa">مصطفى</h2>
-          <p class="couple-amp-lg">&amp;</p>
-          <h2 class="couple-name-lg" data-ar="ملك" data-en="Malak">ملك</h2>
-        </div>
-
-        <!-- Blessing -->
-        <div class="reveal text-center" data-delay="150">
-          <p class="blessing" data-ar="بارك الله لهما وبارك عليهما وجمع بينهما في خير" data-en="May Allah bless them and unite them in goodness">
-            بارك الله لهما وبارك عليهما وجمع بينهما في خير
-          </p>
-        </div>
-
-        <!-- Divider -->
-        <div class="reveal divider-gold divider-sm" data-delay="200"></div>
-
-        <!-- Invitation text -->
-        <div class="reveal text-center" data-delay="250">
-          <p class="invitation-text" data-ar="يسرنا دعوتكم لمشاركتنا فرحة زفافنا" data-en="We are delighted to invite you to celebrate our wedding">
-            يسرنا دعوتكم لمشاركتنا فرحة زفافنا
-          </p>
-        </div>
-
-        <!-- Highlight pill -->
-        <div class="reveal" data-delay="300">
-          <span class="highlight-pill" data-ar="بحضوركم تكتمل فرحتنا" data-en="Your presence completes our joy">
-            بحضوركم تكتمل فرحتنا
-          </span>
-        </div>
-
-        <!-- Countdown -->
-        <div class="reveal text-center countdown-section" data-delay="350">
-          <p class="countdown-label" data-ar="لم يتبقَّ على فرحتنا" data-en="Until our celebration">
-            لم يتبقَّ على فرحتنا
-          </p>
-          <div class="countdown-grid">
-            <div class="countdown-box">
-              <span id="cd-days" class="countdown-value">00</span>
-              <span class="countdown-unit" data-ar="يوم" data-en="Days">يوم</span>
-            </div>
-            <span class="countdown-separator">:</span>
-            <div class="countdown-box">
-              <span id="cd-hours" class="countdown-value">00</span>
-              <span class="countdown-unit" data-ar="ساعة" data-en="Hours">ساعة</span>
-            </div>
-            <span class="countdown-separator">:</span>
-            <div class="countdown-box">
-              <span id="cd-mins" class="countdown-value">00</span>
-              <span class="countdown-unit" data-ar="دقيقة" data-en="Mins">دقيقة</span>
-            </div>
-            <span class="countdown-separator">:</span>
-            <div class="countdown-box">
-              <span id="cd-secs" class="countdown-value">00</span>
-              <span class="countdown-unit" data-ar="ثانية" data-en="Secs">ثانية</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Event details -->
-        <div id="details-card" class="reveal details-card" data-delay="400">
-          <div class="detail-row reveal-left" data-delay="450">
-            <span class="material-symbols-outlined detail-icon">calendar_today</span>
-            <p class="detail-text" data-ar="الأحد، ٦ سبتمبر ٢٠٢٦" data-en="Sunday, September 6, 2026">
-              الأحد، ٦ سبتمبر ٢٠٢٦
-            </p>
-          </div>
-          <div class="detail-row reveal-right" data-delay="500">
-            <span class="material-symbols-outlined detail-icon">schedule</span>
-            <p class="detail-text" data-ar="الساعة ٨:٣٠ مساءً" data-en="8:30 PM">
-              الساعة ٨:٣٠ مساءً
-            </p>
-          </div>
-          <div class="detail-row reveal-left" data-delay="550">
-            <span class="material-symbols-outlined detail-icon">location_on</span>
-            <p class="detail-text" data-ar="قاعة الماسة — بنها، كفر الجزار" data-en="El Masa Hall — Benha, Kafr El-Gazzar">
-              قاعة الماسة — بنها، كفر الجزار
-            </p>
-          </div>
-        </div>
-
-        <!-- Map button -->
-        <div class="reveal" data-delay="600">
-          <a href="https://maps.app.goo.gl/hzJ3EG9pb3VxzKir6" target="_blank" rel="noopener" class="map-btn">
-            <span data-ar="الحصول على الاتجاهات" data-en="Get Directions">الحصول على الاتجاهات</span>
-            <span class="material-symbols-outlined text-lg">near_me</span>
-          </a>
-        </div>
-
-        <!-- Footer -->
-        <div class="reveal text-center" data-delay="700">
-          <p class="footer-text" data-ar="نتشرف بحضوركم" data-en="We would be honored by your presence">
-            نتشرف بحضوركم
-          </p>
-        </div>
-
-        <!-- Closing photo -->
-        <figure class="reveal closing-photo" data-delay="750">
-          <picture>
-            <source srcset="assets/back.webp" type="image/webp">
-            <img alt="مصطفى وملك" src="assets/back.png" width="1100" height="1169" decoding="async">
-          </picture>
-        </figure>
-
+      <div class="names-row">
+        <h2 class="name-lg" data-ar="مصطفى" data-en="Mostafa">مصطفى</h2>
+        <svg viewBox="0 0 24 24" class="names-heart ico-fill" aria-hidden="true"><path d="M12 20.5s-7.5-4.7-7.5-9.7A4.3 4.3 0 0 1 12 8a4.3 4.3 0 0 1 7.5 2.8c0 5-7.5 9.7-7.5 9.7Z"/></svg>
+        <h2 class="name-lg" data-ar="ملك" data-en="Malak">ملك</h2>
       </div>
-    </main>
-  </div>
 
-  <script src="script.js?v=2"></script>
+      <p class="lede muted" data-ar="بارك الله لهما وبارك عليهما وجمع بينهما في خير"
+         data-en="May Allah bless them and unite them in goodness">بارك الله لهما وبارك عليهما وجمع بينهما في خير</p>
+      <p class="lede" data-ar="يسرنا دعوتكم لمشاركتنا فرحة زفافنا"
+         data-en="We are delighted to invite you to celebrate our wedding">يسرنا دعوتكم لمشاركتنا فرحة زفافنا</p>
+      <p class="lede accent" data-ar="بحضوركم تكتمل فرحتنا"
+         data-en="Your presence completes our joy">بحضوركم تكتمل فرحتنا</p>
+    </div>
+
+    <!-- Countdown -->
+    <div id="sec-count" class="glass countdown-card reveal">
+      <p class="countdown-title" data-ar="لم يتبقَّ على فرحتنا" data-en="Until our celebration">لم يتبقَّ على فرحتنا</p>
+
+      <div id="countdown" class="countdown is-loading" dir="rtl">
+        <div class="cd-cell"><span id="cd-days"  class="cd-num">&nbsp;</span><span class="cd-cap" data-ar="يوم" data-en="Days">يوم</span></div>
+        <span class="cd-sep" aria-hidden="true">:</span>
+        <div class="cd-cell"><span id="cd-hours" class="cd-num">&nbsp;</span><span class="cd-cap" data-ar="ساعة" data-en="Hours">ساعة</span></div>
+        <span class="cd-sep" aria-hidden="true">:</span>
+        <div class="cd-cell"><span id="cd-mins"  class="cd-num">&nbsp;</span><span class="cd-cap" data-ar="دقيقة" data-en="Minutes">دقيقة</span></div>
+        <span class="cd-sep" aria-hidden="true">:</span>
+        <div class="cd-cell"><span id="cd-secs"  class="cd-num">&nbsp;</span><span class="cd-cap" data-ar="ثانية" data-en="Seconds">ثانية</span></div>
+      </div>
+
+      <p id="cd-arrived" class="cd-arrived" hidden
+         data-ar="اليوم فرحتنا — أهلاً بكم" data-en="Today is our celebration — welcome">اليوم فرحتنا — أهلاً بكم</p>
+    </div>
+
+    <!-- Event cards -->
+    <div class="detail-grid">
+      <div class="glass detail-card reveal">
+        <svg viewBox="0 0 24 24" class="card-ico"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        <h3 class="card-title" data-ar="الأحد، ٦ سبتمبر ٢٠٢٦" data-en="Sunday, 6 September 2026">الأحد، ٦ سبتمبر ٢٠٢٦</h3>
+        <svg viewBox="0 0 24 24" class="card-ico card-ico-2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg>
+        <p class="card-sub" data-ar="الساعة ٨:٣٠ مساءً" data-en="8:30 PM">الساعة ٨:٣٠ مساءً</p>
+      </div>
+
+      <div id="sec-venue" class="glass detail-card reveal">
+        <div class="detail-card-top">
+          <svg viewBox="0 0 24 24" class="card-ico"><path d="M20 10c0 5.5-8 11-8 11S4 15.5 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <h3 class="card-title" data-ar="قاعة الماسة" data-en="El Masa Hall">قاعة الماسة</h3>
+          <p class="card-sub" data-ar="بنها، كفر الجزار" data-en="Benha, Kafr El-Gazzar">بنها، كفر الجزار</p>
+        </div>
+        <a class="ghost-btn" href="https://maps.app.goo.gl/hzJ3EG9pb3VxzKir6" target="_blank" rel="noopener noreferrer">
+          <span data-ar="الحصول على الاتجاهات" data-en="Get Directions">الحصول على الاتجاهات</span>
+          <svg viewBox="0 0 24 24" class="btn-ico"><path d="M3 11l18-8-8 18-2-8-8-2Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="closing reveal">
+      <p class="closing-line" data-ar="نتشرف بحضوركم" data-en="We are honored by your presence">نتشرف بحضوركم</p>
+      <div class="ornament ornament-sm" aria-hidden="true">
+        <svg viewBox="0 0 24 24" class="ornament-ico"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4L12 3Z"/></svg>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Mobile bottom nav -->
+<nav id="bottom-nav" class="bottom-nav" hidden>
+  <a class="nav-item is-current" href="#sec-home"    data-target="sec-home">
+    <svg viewBox="0 0 24 24" class="nav-ico"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1Z"/></svg>
+    <span data-ar="الدعوة" data-en="HOME">الدعوة</span>
+  </a>
+  <a class="nav-item" href="#sec-count" data-target="sec-count">
+    <svg viewBox="0 0 24 24" class="nav-ico"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg>
+    <span data-ar="الموعد" data-en="TIMER">الموعد</span>
+  </a>
+  <a class="nav-item" href="#sec-details" data-target="sec-details">
+    <svg viewBox="0 0 24 24" class="nav-ico"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+    <span data-ar="التفاصيل" data-en="DETAILS">التفاصيل</span>
+  </a>
+  <a class="nav-item" href="#sec-venue" data-target="sec-venue">
+    <svg viewBox="0 0 24 24" class="nav-ico"><path d="M20 10c0 5.5-8 11-8 11S4 15.5 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+    <span data-ar="المكان" data-en="VENUE">المكان</span>
+  </a>
+</nav>
+
+<script src="script.js?v=4" defer></script>
 </body>
 </html>
