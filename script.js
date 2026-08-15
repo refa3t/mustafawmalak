@@ -215,24 +215,24 @@
       return;
     }
 
-    // ~3s end to end: the seal settles, the flap opens, the card lifts,
-    // and the opening screen clears.
+    // ~4.3s end to end, paced slowly: the flap eases open, the names settle,
+    // then the scene drifts away as the invitation rises.
     if (envelope) envelope.classList.add("is-opening");
 
     setTimeout(() => {
       if (flap) flap.style.transform = "rotateX(168deg)";
       if (envShadow) envShadow.style.opacity = "1";
-    }, 260);
+    }, 320);
 
     setTimeout(() => {
       if (coupleCard) coupleCard.style.opacity = "1";
-    }, 880);
+    }, 1250);
 
     setTimeout(() => {
       if (envShadow) envShadow.style.opacity = "0";
       scene.classList.add("gone");
       showInvitation();
-    }, 1950);
+    }, 2900);
   }
 
   if (envelope) {
