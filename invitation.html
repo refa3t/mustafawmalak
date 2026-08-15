@@ -3,8 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دعوة زفاف — عبد الرحمن & دنيا</title>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Source+Serif+4:wght@400;600&family=Noto+Serif:ital,wght@0,400;1,400&family=Montserrat:wght@400;500;600&family=Reem+Kufi:wght@400..700&family=Amiri:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Aref+Ruqaa:wght@400;700&family=Noto+Naskh+Arabic:wght@400..700&display=swap" rel="stylesheet">
+<title>حفل الزفاف — مصطفى & ملك</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/back.webp" type="image/webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Amiri:wght@400;700&family=Great+Vibes&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -25,7 +28,7 @@
 <div class="scene" id="scene" style="opacity:0;pointer-events:none;">
   <!-- Top Header -->
   <header class="fixed top-0.5 w-full z-50 flex  py-6 justify-center">
-    <h1 class="tracking-tighter flex items-center gap-2 logo-entrance header-float" style="font-size:4rem;line-height:1;color:#C8A040;font-family:'Great Vibes',cursive;text-shadow:0 2px 8px rgba(0,0,0,0.3);">A <span>&amp;</span> <span>D</span></h1>
+    <h1 class="tracking-tighter flex items-center gap-2 logo-entrance header-float" style="font-size:4rem;line-height:1;color:#C8A040;font-family:'Great Vibes',cursive;text-shadow:0 2px 8px rgba(0,0,0,0.3);">M <span>&amp;</span> <span>M</span></h1>
   </header>
 
   <!-- Envelope -->
@@ -45,9 +48,9 @@
       <!-- Couple Card (appears after envelope opens) -->
       <div id="couple-card" class="absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none z-30" style="transition:opacity 0.8s ease 0.6s;">
         <div class="text-center">
-          <p class="font-display-calligraphy text-2xl" style="font-family:'Amiri',serif;color:#C8A040;" data-ar="عبد الرحمن" data-en="Abdulrahman">عبد الرحمن</p>
+          <p class="font-display-calligraphy text-2xl" style="font-family:'Amiri',serif;color:#C8A040;" data-ar="مصطفى" data-en="Mostafa">مصطفى</p>
           <p class="text-lg my-1" style="color:#C8A040;">&amp;</p>
-          <p class="font-display-calligraphy text-2xl" style="font-family:'Amiri',serif;color:#C8A040;" data-ar="دنيا" data-en="Donia">دنيا</p>
+          <p class="font-display-calligraphy text-2xl" style="font-family:'Amiri',serif;color:#C8A040;" data-ar="ملك" data-en="Malak">ملك</p>
           <p class="text-xs mt-3 tracking-widest uppercase" style="color:#C8A040;">SAVE THE DATE</p>
         </div>
       </div>
@@ -57,7 +60,7 @@
   <!-- Couple Illustration -->
   <footer class="fixed bottom-0 w-full flex justify-center items-end z-20" style="overflow:visible;">
     <div class="w-full h-auto">
-      <img alt="Abdulrahman and Donia illustration" class="w-full h-auto" src="assets/back.png" style="transform:scale(1.5);transform-origin:bottom center;mix-blend-mode:multiply;">
+      <img alt="مصطفى وملك" class="w-full h-auto" src="assets/back.webp" width="1100" height="1169" decoding="async" style="transform:scale(1.5);transform-origin:bottom center;mix-blend-mode:multiply;">
     </div>
   </footer>
 
@@ -93,9 +96,9 @@
 
       <!-- Names -->
       <div class="reveal text-center" data-delay="100">
-        <h2 class="text-3xl sm:text-4xl mb-1" style="font-family:'Great Vibes',cursive;color:#C8A040;" data-ar="عبد الرحمن" data-en="Abdulrahman">عبد الرحمن</h2>
+        <h2 class="text-3xl sm:text-4xl mb-1" style="font-family:'Great Vibes',cursive;color:#C8A040;" data-ar="مصطفى" data-en="Mostafa">مصطفى</h2>
         <p class="text-xl my-2" style="color:#C8A040;">&amp;</p>
-        <h2 class="text-3xl sm:text-4xl" style="font-family:'Great Vibes',cursive;color:#C8A040;" data-ar="دنيا" data-en="Donia">دنيا</h2>
+        <h2 class="text-3xl sm:text-4xl" style="font-family:'Great Vibes',cursive;color:#C8A040;" data-ar="ملك" data-en="Malak">ملك</h2>
       </div>
 
       <!-- Blessing -->
@@ -108,7 +111,7 @@
 
       <!-- Invitation text -->
       <div class="reveal text-center" data-delay="250">
-        <p class="text-lg sm:text-xl leading-relaxed" style="font-family:'Amiri',serif;color:rgba(255,255,255,0.9);" data-ar="يسرنا دعوتكم لمشاركتنا فرحة خطوبتنا " data-en="We are delighted to invite you to celebrate our wedding">يسرنا دعوتكم لمشاركتنا فرحة خطوبتنا </p>
+        <p class="text-lg sm:text-xl leading-relaxed" style="font-family:'Amiri',serif;color:rgba(255,255,255,0.9);" data-ar="يسرنا دعوتكم لمشاركتنا فرحة زفافنا" data-en="We are delighted to invite you to celebrate our wedding">يسرنا دعوتكم لمشاركتنا فرحة زفافنا</p>
       </div>
 
       <!-- Highlight pill -->
@@ -148,26 +151,26 @@
         <!-- Date -->
         <div class="flex items-center gap-3 mb-4 reveal-left" data-delay="450">
           <span class="material-symbols-outlined text-xl" style="color:#C8A040;">calendar_today</span>
-          <p class="text-sm" style="font-family:'Amiri',serif;color:rgba(255,255,255,0.85);" data-ar="الجمعة، ٢٤ يوليو ٢٠٢٥" data-en="Friday, July 24, 2026">الجمعة، ٢٤ يوليو ٢٠٢٥</p>
+          <p class="text-sm" style="font-family:'Amiri',serif;color:rgba(255,255,255,0.85);" data-ar="الأحد، ٦ سبتمبر ٢٠٢٦" data-en="Sunday, September 6, 2026">الأحد، ٦ سبتمبر ٢٠٢٦</p>
         </div>
 
         <!-- Time -->
         <div class="flex items-center gap-3 mb-4 reveal-right" data-delay="500">
           <span class="material-symbols-outlined text-xl" style="color:#C8A040;">schedule</span>
-          <p class="text-sm" style="font-family:'Amiri',serif;color:rgba(255,255,255,0.85);" data-ar="الساعة ٩:٠٠ مساءً" data-en="9:00 PM">الساعة ٩:٠٠ مساءً</p>
+          <p class="text-sm" style="font-family:'Amiri',serif;color:rgba(255,255,255,0.85);" data-ar="الساعة ٨:٣٠ مساءً" data-en="8:30 PM">الساعة ٨:٣٠ مساءً</p>
         </div>
 
         <!-- Location -->
         <div class="flex items-center gap-3 reveal-left" data-delay="550">
           <span class="material-symbols-outlined text-xl" style="color:#C8A040;">location_on</span>
-          <p class="text-sm" style="font-family:'Amiri',serif;color:rgba(255,255,255,0.85);" data-ar="بنها — قاعة فيلا كينج" data-en="Banha — Villa King Hall">بنها — قاعة فيلا كينج</p>
+          <p class="text-sm" style="font-family:'Amiri',serif;color:rgba(255,255,255,0.85);" data-ar="قاعة الماسة — بنها، كفر الجزار" data-en="El Masa Hall — Benha, Kafr El-Gazzar">قاعة الماسة — بنها، كفر الجزار</p>
         </div>
 
       </div>
 
       <!-- Map button -->
       <div class="reveal" data-delay="600">
-        <a href="https://maps.google.com/?q=Villa+King+Banha" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all hover:scale-105 pulse-button" style="background:linear-gradient(135deg,#003527,#064e3b);color:white;box-shadow:0 4px 20px rgba(0,53,39,0.3);">
+        <a href="https://maps.app.goo.gl/hzJ3EG9pb3VxzKir6" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all hover:scale-105 pulse-button" style="background:linear-gradient(135deg,#003527,#064e3b);color:white;box-shadow:0 4px 20px rgba(0,53,39,0.3);">
           <span data-ar="الحصول على الاتجاهات" data-en="Get Directions">الحصول على الاتجاهات</span>
           <span class="material-symbols-outlined text-lg">near_me</span>
         </a>

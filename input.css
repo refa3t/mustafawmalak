@@ -660,7 +660,7 @@ body {
 #invitation-card {
   background-color: #0f1830 !important;
   background-image:
-    url('assets/back.png'),
+    image-set(url('assets/back.webp') type('image/webp'), url('assets/back.png') type('image/png')),
     radial-gradient(circle at 50% 20%, #1a2452 0%, #0f1830 55%, #070c1c 100%) !important;
   background-size: 135% 85%, cover !important;
   background-position: bottom center, center !important;

@@ -131,7 +131,7 @@
 
   // ═══════════════ COUNTDOWN ═══════════════
   function startCountdown() {
-    const target = new Date("2026-07-24T18:00:00Z").getTime();
+    const target = new Date("2026-09-06T17:30:00Z").getTime();
     const els = {
       d: $("#cd-days"),
       h: $("#cd-hours"),
