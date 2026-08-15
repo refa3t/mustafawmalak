@@ -229,14 +229,14 @@ html:not(.js) .scene { display: none; }
 
 .envelope-container {
   position: relative;
-  width: min(86vw, 340px);
+  width: min(72vw, 285px);
   aspect-ratio: 536 / 356;
   cursor: pointer;
   perspective: 1000px;
   border-radius: 6px;
   transition: transform 0.5s ease;
 }
-@media (min-width: 1024px) { .envelope-container { width: 300px; } }
+@media (min-width: 768px) { .envelope-container { width: 320px; } }
 
 .envelope-container:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 10px; }
 
@@ -270,8 +270,9 @@ html:not(.js) .scene { display: none; }
 .envelope-seal {
   position: absolute;
   bottom: 0; left: 50%;
-  width: clamp(62px, 19vw, 78px);
-  height: clamp(62px, 19vw, 78px);
+  width: 21%;
+  height: auto;
+  aspect-ratio: 1;
   object-fit: contain;
   transform: translate(-50%, 50%);
   z-index: 20;
@@ -838,6 +839,7 @@ html[lang="ar"] .ghost-btn { font-family: var(--font-body); font-size: 14px; let
 /* Short viewports: give the envelope room rather than clipping it */
 @media (max-height: 660px) {
   .header-mono { font-size: 2.2rem; }
+  .illustration-footer { height: 32%; }
   .envelope-stage { gap: 12px; }
   .illustration-img { -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 26%); mask-image: linear-gradient(to bottom, transparent 0%, #000 26%); }
 }
