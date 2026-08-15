@@ -53,6 +53,7 @@
 
     store.set("localStorage", "mm-lang", next);
     renderCountdown();
+    setMusicLabel();
   }
 
   /* ═══════════════ COUNTDOWN ═══════════════
@@ -192,6 +193,51 @@
     }
   }
 
+  /* ═══════════════ MUSIC ═══════════════
+     Nothing is fetched or played until the guest opens the envelope, which
+     is also the gesture browsers require before audio may start. */
+  const music = $("#bg-music");
+  const musicBtn = $("#music-toggle");
+
+  function setMusicLabel() {
+    if (!musicBtn) return;
+    const on = musicBtn.getAttribute("aria-pressed") === "true";
+    const key = "data-label-" + (on ? "on-" : "off-") + lang;
+    const label = musicBtn.getAttribute(key);
+    if (label) musicBtn.setAttribute("aria-label", label);
+  }
+
+  function setMusicOn(on) {
+    if (!music || !musicBtn) return;
+    musicBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    setMusicLabel();
+    store.set("sessionStorage", "mm-music", on ? "on" : "off");
+
+    if (!on) {
+      music.pause();
+      return;
+    }
+    // A rejected play() is normal when the browser withholds permission —
+    // leave the button available and stay quiet about it.
+    const attempt = music.play();
+    if (attempt && attempt.catch) {
+      attempt.catch(() => musicBtn.setAttribute("aria-pressed", "false"));
+    }
+  }
+
+  function startMusic() {
+    if (!music || !musicBtn) return;
+    music.volume = 0.35;
+    musicBtn.hidden = false;
+    setMusicOn(store.get("sessionStorage", "mm-music") !== "off");
+  }
+
+  if (musicBtn) {
+    musicBtn.addEventListener("click", () => {
+      setMusicOn(musicBtn.getAttribute("aria-pressed") !== "true");
+    });
+  }
+
   /* ═══════════════ OPENING THE ENVELOPE ═══════════════ */
   let opened = false;
 
@@ -208,6 +254,7 @@
 
     if (envelope) envelope.setAttribute("aria-expanded", "true");
     if (openHint) openHint.style.opacity = "0";
+    startMusic();
 
     if (reduced) {
       scene.classList.add("gone");
@@ -255,6 +302,8 @@
     card.classList.add("show");
     initReveals();
     startCountdown();
+    if (musicBtn) musicBtn.hidden = false;
+    setMusicLabel();
     return true;
   }
 

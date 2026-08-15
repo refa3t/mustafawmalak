@@ -172,6 +172,49 @@ html::-webkit-scrollbar, body::-webkit-scrollbar,
 .lang-btn:not(.is-active):hover { color: var(--gold-light); }
 .lang-btn:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 2px; }
 
+
+/* ═══════════════ MUSIC CONTROL ═══════════════ */
+.music-toggle { display: none; }
+
+.js .music-toggle:not([hidden]) {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 14px);
+  inset-inline-start: 14px;
+  z-index: 300;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(20, 20, 0, 0.72);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--gold-45);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.42);
+  color: var(--primary);
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.music-toggle svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.music-toggle .ico-off { display: none; }
+.music-toggle[aria-pressed="false"] { color: var(--on-surface-variant); }
+.music-toggle[aria-pressed="false"] .ico-on { display: none; }
+.music-toggle[aria-pressed="false"] .ico-off { display: block; }
+.music-toggle:active { transform: scale(0.94); }
+.music-toggle:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
 /* ═══════════════ SCENE 1 — ENVELOPE ═══════════════ */
 .scene {
   position: fixed;
@@ -222,7 +265,7 @@ html:not(.js) .scene { display: none; }
 
 .open-hint {
   position: absolute;
-  top: calc(100% + 18px);
+  top: calc(100% + 26px);
   left: 0;
   right: 0;
 }
@@ -358,7 +401,7 @@ html[lang="ar"] .open-hint { font-family: var(--font-display); font-size: clamp(
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  height: 38%;
+  height: 30%;
   z-index: 20;
 }
 
@@ -839,7 +882,7 @@ html[lang="ar"] .ghost-btn { font-family: var(--font-body); font-size: 14px; let
 /* Short viewports: give the envelope room rather than clipping it */
 @media (max-height: 660px) {
   .header-mono { font-size: 2.2rem; }
-  .illustration-footer { height: 32%; }
+  .illustration-footer { height: 26%; }
   .envelope-stage { gap: 12px; }
   .illustration-img { -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 26%); mask-image: linear-gradient(to bottom, transparent 0%, #000 26%); }
 }
